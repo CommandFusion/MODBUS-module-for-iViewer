@@ -1,0 +1,79 @@
+<gui>
+  <properties>
+    <project>modbus</project>
+    <designer>
+    </designer>
+    <size>
+      <portrait width="768" height="1024" />
+      <landscape width="1024" height="768" />
+    </size>
+    <imagefolder>
+    </imagefolder>
+    <debug loaderrors="0" connectionerrors="0" />
+  </properties>
+  <systems>
+    <system name="MODBUS" ip="192.168.0.200" port="10210" protocol="tcp" alwayson="1" offlinequeue="0" accept="0" acceptBroadcasts="0" ssl="0" maxconnections="0" heartbeatRx="" heartbeatTx="" heartbeatMode="-1" eom="" connectionStatus="0" disconnectionStatus="0">
+      <fb name="Feedback" regex=".*" />
+    </system>
+  </systems>
+  <themes>
+    <theme type="background" name=".background"><![CDATA[background-color: #C0C0C0;]]></theme>
+    <theme type="button" name=".button[state='0']"><![CDATA[padding: 0px 0px 0px 0px;  filter: Alpha(Opacity=100); -moz-opacity:1; opacity: 1; background-color: #004080; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".button[state='1']"><![CDATA[padding: 0px 0px 0px 0px;  filter: Alpha(Opacity=100); -moz-opacity:1; opacity: 1; background-color: #FF8000; color: Black; font-size: 12px; font-family: 'Verdana'; font-weight: bold; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="input" name=".input"><![CDATA[ background-color: White; border-width: 2px; border-color: #400080; color: Black; font-size: 12px; font-family: 'Arial'; text-align: left; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".Text"><![CDATA[ color: Black; font-size: 12px; font-family: 'Arial'; text-align: left; vertical-align: middle; font-weight: bold; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="button" name=".ActionButton[state='0']"><![CDATA[padding: 0px 0px 0px 0px;  filter: Alpha(Opacity=100); -moz-opacity:1; opacity: 1; background-color: Purple; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".ActionButton[state='1']"><![CDATA[padding: 0px 0px 0px 0px;  filter: Alpha(Opacity=100); -moz-opacity:1; opacity: 1; background-color: #800040; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="input" name=".Log"><![CDATA[ background-color: White; border-width: 2px; border-color: Purple; color: Black; font-size: 12px; font-family: 'Arial'; text-align: left; vertical-align: top; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".Logs"><![CDATA[ text-shadow: rgba(255,255,255,0.08) 1px 1px 2px; color: Black; font-size: 12px; font-family: 'Arial'; text-align: left; vertical-align: top; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+  </themes>
+  <tokens>
+    <token name="MODBUS_IP" value="192.168.0.200" persist="1" />
+    <token name="MODBUS_PORT" value="503" persist="1" />
+  </tokens>
+  <scripts>
+    <script name="modbus.js" />
+    <script name="main.js" />
+    <script name="GenericTestFramework.js" />
+  </scripts>
+  <page name="Startup" j="0" transition="None" subtype="None" time="0" ease="" start="1">
+    <portrait />
+    <landscape t="background">
+      <input j="0" s="10" x="427" y="315" w="192" h="29" pass="0" autoFocus="0" f="0" t="input" l="0">start</input>
+      <input j="0" s="11" x="427" y="357" w="192" h="29" pass="0" autoFocus="0" f="0" t="input" l="0">quantity</input>
+      <input j="0" s="12" x="427" y="399" w="192" h="29" pass="0" autoFocus="0" f="0" t="input" l="0">value</input>
+      <txt j="0" x="342" y="317" w="79" h="24" t="Text" wrap="False" l="0">Start</txt>
+      <txt j="0" x="342" y="359" w="79" h="24" t="Text" wrap="False" l="0">Quantity</txt>
+      <txt j="0" x="342" y="401" w="79" h="24" t="Text" wrap="False" l="0">Value</txt>
+      <list j="1" x="8" y="51" w="305" h="603" headerSub="" titleSub="" contentSub="TestButton" footerSub="" orientation="v" l="0" swipedelete="0" />
+      <txt j="0" x="13" y="21" w="240" h="25" t="Text" wrap="False" l="0">Select a test below:</txt>
+      <txt j="0" x="341" y="252" w="284" h="47" t="Text" wrap="True" l="0">Enter values appropriate for the test to run then select a test in the list at left.</txt>
+      <input j="0" s="200" x="428" y="63" w="192" h="30" pass="0" autoFocus="0" f="3" t="input" l="0">
+      </input>
+      <input j="0" s="201" x="428" y="105" w="192" h="30" pass="0" autoFocus="0" f="4" t="input" l="0">
+      </input>
+      <txt j="0" x="343" y="65" w="79" h="25" t="Text" wrap="False" l="0">IP address:</txt>
+      <txt j="0" x="343" y="107" w="79" h="25" t="Text" wrap="False" l="0">Port:</txt>
+      <txt j="0" x="342" y="23" w="284" h="25" t="Text" wrap="False" l="0">MODBUS system to test:</txt>
+      <btn j="200" x="515" y="151" w="107" h="33" t="ActionButton" flip="None" sim="1" l="0" s="1" js="onUpdateTargetSystem()">
+        <inactive s="0">Update</inactive>
+        <active s="0">Update</active>
+      </btn>
+      <txt j="0" x="702" y="22" w="284" h="25" t="Text" wrap="False" l="0">Log from last test:</txt>
+      <btn j="300" x="896" y="562" w="107" h="33" t="ActionButton" flip="None" sim="1" l="0" s="1" js="GenericTestFramework.onClearLog()">
+        <inactive s="0">Clear</inactive>
+        <active s="0">Clear</active>
+      </btn>
+      <txt j="300" x="703" y="62" w="300" h="477" t="Logs" wrap="True" l="0">Text</txt>
+    </landscape>
+  </page>
+  <subpage name="TestButton" w="305" h="60" clip="1">
+    <btn j="675" x="8" y="6" w="288" h="46" t="button" flip="None" sim="1" l="0" s="1" js="GenericTestFramework.onTestButtonPressed(listIndex)">
+      <inactive s="1">Title</inactive>
+      <active s="1">Title</active>
+    </btn>
+  </subpage>
+  <subpage name="LogEntry" w="305" h="60" clip="1">
+    <txt j="1" x="1" y="3" w="300" h="50" t="" wrap="True" l="0">Text</txt>
+  </subpage>
+</gui>
