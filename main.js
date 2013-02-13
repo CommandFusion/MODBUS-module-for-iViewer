@@ -58,7 +58,7 @@ function onUpdateTargetSystem() {
 	CF.getJoins(["s200", "s201", CF.GlobalTokensJoin], function(joins) {
 		// read updated
 		var modbusIP = joins.s200.value;
-		var modpusPort = joins.s201.value;
+		var modbusPort = joins.s201.value;
 		var change = false;
 		if (modbusIP != joins[CF.GlobalTokensJoin].tokens["MODBUS_IP"]) {
 			CF.setToken(CF.GlobalTokensJoin, "MODBUS_IP", modbusIP);
