@@ -70,7 +70,7 @@ var MODBUS_REMOTE = function(sys,fb) {
 				data = String.fromCharCode.apply(null, data);
 			}
 			var trans = this.nextTransactionID;
-			var len = 1 + data.length;
+			var len = 2 + data.length;
 			var pkt = String.fromCharCode.apply(null, [(trans >> 8) & 0xFF, trans & 0xFF, 0, 0, (len >> 8) & 0xFF, len & 0xFF, slaveID, functionCode]) + data;
 			this.nextTransactionID = (this.nextTransactionID + 1) & 0xFFFF;
 
