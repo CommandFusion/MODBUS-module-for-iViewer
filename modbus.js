@@ -403,5 +403,5 @@ var MODBUS_REMOTE = function(sys,fb) {
 CF.modules.push({
 	name:"MODBUS",			// the name of this module
 	object:MODBUS,			// the `this' object for the setup function
-	version:"v0.2"			// the version of this module
+	version:"v1.0"			// the version of this module
 });
